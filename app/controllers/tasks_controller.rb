@@ -17,6 +17,18 @@ class TasksController < ApplicationController
     end
   end
 
+  get '/tasks/:id' do
+    @task = Task.find(params[:id])
+    erb :'/tasks/show'
+  end
 
+  get '/tasks/:id/edit' do
+    @task = Task.find(params[:id])
+    erb :'/tasks/edit'
+  end
+
+  patch '/tasks/:id/' do
+    @task = Task.find(params[:id])
+  end
 
 end

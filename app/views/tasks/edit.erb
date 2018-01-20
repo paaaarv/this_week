@@ -1,0 +1,10 @@
+<h2> Update Your Task! </h2>
+
+<form action = "/tasks/:id" method = "POST">
+  <input type = 'hidden' name = "_method" value = "PATCH">
+  <label>Post Name: </label>
+  <input type = 'text' name = 'name' id = 'name' value = '<%=@task.name%>'> <br>
+  <label>Post Summary: </label>
+  <input type = 'text' name = 'summary' id = 'summary' value = '<%=@task.summary%>'><br>
+  <input type = 'submit' value = 'Edit Task'>
+</form>

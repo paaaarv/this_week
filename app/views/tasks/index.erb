@@ -1,0 +1,6 @@
+<h1>Tasks This Week... </h1>
+
+<%=@tasks.each do |task|%>
+  <h3><%=task.name%> </h3>
+  <p> <%= task.summary%> </p>
+<%end%>

@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180118232036) do
+ActiveRecord::Schema.define(version: 20180122190513) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+  end
+
+  create_table "taskcategories", force: :cascade do |t|
+    t.integer "tasks_id"
+    t.integer "categories_id"
+    t.index ["categories_id"], name: "index_taskcategories_on_categories_id"
+    t.index ["tasks_id"], name: "index_taskcategories_on_tasks_id"
+  end
 
   create_table "tasks", force: :cascade do |t|
     t.string "name"

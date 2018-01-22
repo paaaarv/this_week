@@ -4,18 +4,19 @@
 
 
 <form action = "/tasks/new" method = "POST">
-  <label> Task Name: </label>
+  <label> Task Name: </label><br>
   <input type = 'text' name = 'name' id = 'name'><br>
-  <label> Task Summary: </label>
-  <input type = 'text-area' name = 'summary' id = 'summary'><br>
-
+  <br>
+  <label> Task Summary: </label><br>
+  <textarea name = 'summary' id = 'summary'></textarea><br>
+  <br><br>
   <%@categories.each do |cgory|%>
     <ul>
       <li><input type = 'checkbox' id = '<%=cgory.name%>' name = "task[cgory_ids][]" value = "<%=cgory.id%>"><%=cgory.name%></input></li>
     </ul>
   <%end%>
   <br>
-  <label>Create a new Category for your Task</label>
+  <label>Create a new Category for your Task:</label>
   <input type = 'text' name = 'category[name]' id = 'category_name'>
 ` <input type = 'submit' value = "Submit Task">`
 

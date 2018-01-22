@@ -8,8 +8,6 @@ class TasksController < ApplicationController
   end
 
   get '/tasks/new' do
-    @cag1 = Category.new(name: "Work")
-    @cag2 = Category.new(name: "Home")
     @categories = Category.all
     erb :'/tasks/new'
   end

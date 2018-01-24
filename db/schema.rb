@@ -16,11 +16,9 @@ ActiveRecord::Schema.define(version: 20180122190513) do
     t.string "name"
   end
 
-  create_table "taskcategories", force: :cascade do |t|
-    t.integer "tasks_id"
-    t.integer "categories_id"
-    t.index ["categories_id"], name: "index_taskcategories_on_categories_id"
-    t.index ["tasks_id"], name: "index_taskcategories_on_tasks_id"
+  create_table "task_categories", force: :cascade do |t|
+    t.integer "task_id"
+    t.integer "category_id"
   end
 
   create_table "tasks", force: :cascade do |t|

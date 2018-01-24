@@ -16,7 +16,12 @@ class TasksController < ApplicationController
     if params[:name] == "" || params[:summary] == ""
       redirect '/tasks/new'
     else
+      binding.pry
       @task = Task.create(name: params[:name], summary: params[:summary])
+      if !params["categories"]["name"].empty?
+          @task.categories << Category.new(name: params["categories"]["name"])
+      end
+      redirect "/tasks/#{@task.id}"
     end
   end
 

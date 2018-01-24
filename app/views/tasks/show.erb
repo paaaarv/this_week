@@ -4,3 +4,11 @@
 <br><br>
 
 <h5> <%= @task.summary%> </h5>
+
+<br> <br>
+
+<% @task.categories.each do |cgory|%>
+  <ul>
+    <li><%=cgory.name%></li>
+  </ul>
+<%end%> 

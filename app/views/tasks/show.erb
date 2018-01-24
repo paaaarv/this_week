@@ -12,3 +12,13 @@
     <li><%=cgory.name%></li>
   </ul>
 <%end%>
+
+<form action = "/tasks/<%=@task.id%>/edit" method = "GET">
+  <input type = "hidden" name = "_method" value = "PATCH">
+  <input type = "submit" value = "Edit Task">
+</form>
+
+<form action = "/tasks/<%=@task.id%>/delete" method = "GET">
+  <input type = "hidden" name = "_method" value = "DELETE">
+  <input type = "submit" value = "Delete Task">
+</form>

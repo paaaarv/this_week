@@ -43,4 +43,11 @@ class TasksController < ApplicationController
     redirect "/tasks/#{@task.id}"
   end
 
+  get '/tasks/:id/delete' do
+    @task = Task.find(params[:id])
+    @task.delete
+    redirect '/tasks'
+  end
+
+
 end

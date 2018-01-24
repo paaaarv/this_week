@@ -1,7 +1,9 @@
 
 
 class UsersController < ApplicationController
-
+  enable :sessions
+  set :session_secret, "password_security"
+  
   get '/signup' do
     erb :signup
   end

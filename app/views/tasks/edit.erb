@@ -6,5 +6,13 @@
   <input type = 'text' name = 'name' id = 'name' value = '<%=@task.name%>'> <br>
   <label>Post Summary: </label>
   <input type = 'text' name = 'summary' id = 'summary' value = '<%=@task.summary%>'><br>
+  <%@categories.each do |cgory|%>
+    <ul>
+      <li><input type = 'checkbox' id = '<%=cgory.name%>' name = "category_ids[]" value = "<%=cgory.id%>"><%=cgory.name%></input></li>
+    </ul>
+  <%end%>
+  <br>
+  <label>Create a new Category for your Task:</label>
+  <input type = 'text' name = 'categories[name]' id = 'categories_name'>
   <input type = 'submit' value = 'Edit Task'>
 </form>
